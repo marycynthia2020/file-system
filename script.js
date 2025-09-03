@@ -15,6 +15,6 @@ function watchFolder(folderName){
 }
 }
 
-watchFolder("assignment")
+// watchFolder()
 
 
