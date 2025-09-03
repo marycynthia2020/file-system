@@ -7,7 +7,14 @@ function watchFolder(folderName){
     fs.watch(path.join(__dirname, folderName), (eventType, filename) =>{
           const timeStamp = new Date().getTime()
           if(filename){
-            console.log(`an event type of ${eventType} occured on  ${filename} at ${timeStamp} `)
+            const logMessage = `an event type of ${eventType} occured on  ${filename} at ${timeStamp} `
+            fs.appendFile("message-log.txt", logMessage, (err)=>{
+                if(err){
+                    console.log("log message not appended")
+                    return
+                }
+                console.log("log message appended successfully")
+            })
           }
     })
 }catch{
@@ -15,6 +22,6 @@ function watchFolder(folderName){
 }
 }
 
-// watchFolder()
+watchFolder()
 
 

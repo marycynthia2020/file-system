@@ -107,7 +107,7 @@ async function createUserJson(){
    }
 }
 
-// createUserJson().then(message => console.log(message, ))
+createUserJson().then(message => console.log(message, ))
 
 function addNewuser(newuser){
       let usersData = []
